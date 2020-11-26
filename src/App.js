@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Books from "./components/Books";
 
-function App() {
+const API_KEY = "AgaC4xNLSyedv8rp7IcYbkTVieGSTRoC";
+
+class App extends Component {
+
+  state = {
+    books:[]
+  }
+  
+  componentDidMount = async () => {
+    const api_call = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${API_KEY}`);
+    const data = await api_call.json();
+
+    this.setState({books : data.results.books});
+    console.log(this.state.books);
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">The New York Times Best Selling Books</span>
+      </nav>
+      <Books books={this.state.books} />
     </div>
   );
+  }
 }
 
 export default App;
