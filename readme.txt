@@ -27,6 +27,7 @@ Web Browser
 
 >>Go inside project directory and press 'Sfift+Right Mouse Button'.
 >>Click 'Open Powershell Window here' to open Powershell window.
+>>Then type 'npm install' to configure the node modules.
 >>Then type 'npm start' to start development server to run application.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Web Browser
 >>Then type 'code .' to open project with Visual Studio Code.
 >>Go to terminal tab on Visual Studio Code.
 >>Get New Terminal.
+>>Then type 'npm install' to configure the node modules.
 >>Type 'npm start' to run application.
 
 Now Web Application is successfully running....!
